@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign up page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <script src="{% static 'login.js' %}"></script>
+</head>
+<body>
+<p class="tip">Click on button in image container</p>
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+<div class="cont">
+  <div class="form sign-in">
+    <h2>Welcome back,</h2>
+    <label>
+      <span>Username</span>
+    </label>
+      <div class="form-group"> <input type="text" name="username"  /></div>
+    <label>
+      <span>Password</span>
+    </label>
+      <div class="form-group"><input type="password" name="password" /></div>
+      <br>
+    <p class="forgot-pass">Forgot password?</p><br><br>
+      <div class="form-group"><button type="submit" class="btn btn-primary btn-block" >Sign In</button></div>
+    <button type="button" class="fb-btn">Connect with <span>facebook</span></button>
+  </div>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New here?</h2>
+        <p>Sign up and discover great amount of new opportunities!</p>
+      </div>
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>If you already have an account, just sign in. We've missed you!</p>
+      </div>
+      <div class="img__btn">
+          <a href="{% url 'register' %}"><span class="m--up">Sign Up</span></a>
+        <span class="m--in">Sign In</span>
+      </div>
+    </div>
+
+    <div class="form sign-up">
+      <h2>Time to feel like home,</h2>
+      <label>
+        <span>Name</span>
+        <input type="text" />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" />
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" />
+      </label>
+      <button type="button" class="submit">Sign Up</button>
+      <button type="button" class="fb-btn">Join with <span>facebook</span></button>
+    </div>
+  </div>
+</div>
+    </form>
+
+</body>
+</html>
